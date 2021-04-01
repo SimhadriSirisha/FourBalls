@@ -1,0 +1,58 @@
+import processing.core.PApplet;
+public class FourBallsP extends PApplet{
+
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
+    public static final int DIAMETER = 10;
+    int x1 = 0,x2=0,x3=0,x4=0;
+    int h4 = (4 * HEIGHT) / 5;
+    int h3 = (3 * HEIGHT) / 5;
+    int h2 = (2*HEIGHT)/5;
+    int h1 = HEIGHT/5;
+
+    class Ball{
+        int speed, pos, x, diameter;
+
+        public Ball(int speed, int pos, int diameter) {
+            System.out.println("object created");
+            x = 0;
+            this.speed = speed;
+            this.pos = pos;
+            this.diameter = diameter;
+        }
+
+        public void drawBall() {
+            ellipse(x, pos, diameter, diameter);
+            x += speed;
+        }
+    }
+
+    Ball b1 = new Ball(1,h1,DIAMETER);
+    Ball b2 = new Ball(2,h2,DIAMETER);
+    Ball b3 = new Ball(3,h3,DIAMETER);
+    Ball b4 = new Ball(4,h4,DIAMETER);
+
+    public static void main(String[] args) {
+        PApplet.main("FourBallsP",args);
+    }
+
+    @Override
+    public void settings() {
+        size(WIDTH, HEIGHT);
+    }
+
+    @Override
+    public void setup() {
+        fill(color(random(255),random(255),random(255)));
+        stroke(color(random(255),random(255),random(255)));
+    }
+
+    @Override
+    public void draw() {
+        b1.drawBall();
+        b2.drawBall();
+        b3.drawBall();
+        b4.drawBall();
+    }
+}
+
