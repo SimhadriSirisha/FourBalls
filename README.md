@@ -1,2 +1,4 @@
 # FourBalls
-Procedural attempt
+Procedural attempt - (fourBallsCode)
+
+OOP attempt - (fourBallsOOP)
